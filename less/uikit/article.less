@@ -7,7 +7,7 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            80px;
+@article-margin-top:                            @grid-gutter-vertical;
 
 @article-title-font-size:                       round((@global-font-size * 2.6)); // 36px / 42px
 @article-title-line-height:                     round((@article-title-font-size * 1.154)); // 42px / 48px
@@ -24,6 +24,12 @@
 
 @article-divider-margin:                        @global-margin-large;
 @article-divider-border:                        @global-border;
+
+//
+// New
+//
+
+@article-padding:                               25px;
 
 
 // Sub-object `uk-article-title`
@@ -63,6 +69,12 @@
 // ========================================================================
 
 .hook-article-misc() {
+
+    .uk-article {
+        padding: @article-padding;
+        background: @global-background;
+        color: @global-color;
+    }
 
     .uk-article-title a:hover { border-bottom: 1px solid @global-color; }
 

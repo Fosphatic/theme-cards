@@ -16,6 +16,12 @@
 html { overflow-y: scroll; }
 
 
+/* Background Image
+ ========================================================================== */
+
+body { background-attachment: fixed; }
+
+
 /* Header
  ========================================================================== */
 
@@ -32,8 +38,6 @@ html { overflow-y: scroll; }
     .tm-header > .uk-flex { display: block; }
 
 }
-
-
 
 
 /* Blocks
@@ -58,6 +62,12 @@ html { overflow-y: scroll; }
 
 /* Blog
  ========================================================================== */
+
+.tm-article-teaser {
+    margin: -@article-padding -@article-padding @article-padding -@article-padding;
+    margin-left: @panel-box-teaser-margin;
+    margin-right: @panel-box-teaser-margin;
+}
 
 .tm-container-small {
     max-width: 750px;

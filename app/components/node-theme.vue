@@ -37,6 +37,23 @@
             </div>
         </div>
 
+        <div class="uk-form-row">
+            <label class="uk-form-label">{{ 'Background Image' | trans }}</label>
+            <div class="uk-form-controls uk-form-width-large">
+                <input-image source="{{@ node.theme.image_alt }}"></input-image>
+                <p class="uk-form-help-block">{{ 'Select an alternative image for the page.' | trans }}</p>
+            </div>
+        </div>
+
+        <div class="uk-form-row">
+            <label class="uk-form-label">{{ 'Logo' | trans }}</label>
+            <div class="uk-form-controls uk-form-width-large">
+                <input-image source="{{@ node.theme.logo_alt }}"></input-image>
+                <p class="uk-form-help-block">{{ 'Select an alternative logo for the page.' | trans }}</p>
+            </div>
+        </div>
+
+
     </div>
 
 </template>

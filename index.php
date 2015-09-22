@@ -49,7 +49,9 @@ return [
         'title_large' => false,
         'alignment' => '',
         'html_class' => '',
-        'sidebar_first' => false
+        'sidebar_first' => false,
+        'image_alt' => '',
+        'logo_alt' => ''
 
     ],
 
@@ -62,7 +64,7 @@ return [
         'title_size' => 'uk-panel-title',
         'alignment' => '',
         'html_class' => '',
-        'panel' => ''
+        'panel' => 'uk-panel-box'
 
     ],
 
@@ -77,7 +79,7 @@ return [
     'config' => [
 
         'logo_small' => '',
-        'blog_alignment' => true
+        'image' => ''
 
     ],
 
@@ -108,9 +110,14 @@ return [
                 return;
             }
 
-            $classes = [];
+            if ($event['image_alt']) {
+                $event['image'] = $event['image_alt'];
+            }
 
-            $event['classes'] = $classes;
+            if ($event['logo_alt']) {
+                $event['logo'] = $event['logo_alt'];
+            }
+
         },
 
         'view.system/site/widget-menu' => function ($event, $view) {
