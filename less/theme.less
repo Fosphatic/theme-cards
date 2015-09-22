@@ -1,0 +1,65 @@
+@import "uikit/uikit.less";
+
+@icon-font-path: "../../../../../app/assets/uikit/fonts";
+@global-image-path: '../../less/uikit/images';
+
+/* ========================================================================
+   Theme
+ ========================================================================== */
+
+[v-cloak] { display: none; }
+
+/*
+ * Force vertical scrollbar
+ */
+
+html { overflow-y: scroll; }
+
+
+/* Header
+ ========================================================================== */
+
+.tm-header { padding-top: 150px; }
+
+.tm-logo { margin-bottom: 30px; }
+
+
+/* Phone landscape and smaller */
+@media (max-width: @breakpoint-small-max) {
+
+    .tm-header { padding-top: 0px; }
+
+    .tm-header > .uk-flex { display: block; }
+
+}
+
+
+
+
+/* Blocks
+ ========================================================================== */
+
+/*
+ * Footer
+ */
+
+/* Phone landscape and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-footer {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+}
+
+.tm-footer .uk-panel + .uk-panel { margin-top: @global-grid-gutter; }
+
+
+/* Blog
+ ========================================================================== */
+
+.tm-container-small {
+    max-width: 750px;
+    margin: auto;
+}

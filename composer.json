@@ -1,0 +1,18 @@
+{
+    "name": "pagekit/theme-cards",
+    "type": "pagekit-theme",
+    "version": "0.9.0",
+    "title": "Cards",
+    "description": "A great lifestyle theme to showcase images and start blogging.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Pagekit",
+            "email": "info@pagekit.com",
+            "homepage": "http://pagekit.com"
+        }
+    ],
+    "extra": {
+        "image": "image.jpg"
+    }
+}
