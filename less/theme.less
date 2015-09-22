@@ -36,9 +36,11 @@ body { background-attachment: fixed; }
 /* Phone landscape and smaller */
 @media (max-width: @breakpoint-small-max) {
 
-    .tm-header { padding-top: 0px; }
-
-    .tm-header > .uk-flex { display: block; }
+    .tm-header {
+        display: block;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
 
 }
 
