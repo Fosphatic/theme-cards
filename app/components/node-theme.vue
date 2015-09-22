@@ -39,20 +39,14 @@
 
         <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Background Image' | trans }}</label>
-            <div class="uk-form-controls uk-form-width-large">
-                <input-image source="{{@ node.theme.image_alt }}"></input-image>
+            <div class="uk-form-controls uk-form-controls-text">
+                <p class="uk-form-controls-condensed">
+                    <label><input type="checkbox" v-model="node.theme.contrast_alt"> {{ 'Invert colors' | trans }}</label>
+                </p>
+                <p class="uk-form-controls-condensed uk-form-width-large"><input-image source="{{@ node.theme.image_alt }}"></input-image></p>
                 <p class="uk-form-help-block">{{ 'Select an alternative image for the page.' | trans }}</p>
             </div>
         </div>
-
-        <div class="uk-form-row">
-            <label class="uk-form-label">{{ 'Logo' | trans }}</label>
-            <div class="uk-form-controls uk-form-width-large">
-                <input-image source="{{@ node.theme.logo_alt }}"></input-image>
-                <p class="uk-form-help-block">{{ 'Select an alternative logo for the page.' | trans }}</p>
-            </div>
-        </div>
-
 
     </div>
 

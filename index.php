@@ -51,7 +51,8 @@ return [
         'html_class' => '',
         'sidebar_first' => false,
         'image_alt' => '',
-        'logo_alt' => ''
+        'contrast_alt' => '',
+
 
     ],
 
@@ -79,7 +80,10 @@ return [
     'config' => [
 
         'logo_small' => '',
-        'image' => ''
+        'logo_contrast' => '',
+        'image' => '',
+        // TODO
+        'contrast' => ''
 
     ],
 
@@ -111,11 +115,14 @@ return [
             }
 
             if ($event['image_alt']) {
-                $event['image'] = $event['image_alt'];
-            }
 
-            if ($event['logo_alt']) {
-                $event['logo'] = $event['logo_alt'];
+                $event['image'] = $event['image_alt'];
+                $event['contrast'] = $event['contrast_alt'];
+
+                if ($event['contrast'] && $event['logo_contrast']) {
+                    $event['logo'] = $event['logo_contrast'];
+                }
+
             }
 
         },

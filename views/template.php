@@ -13,39 +13,37 @@
         <div class="uk-container uk-container-center">
 
             <?php if ($params['logo'] || $view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
-            <div class="tm-header">
-                <div class="uk-flex uk-flex-middle uk-flex-column">
+            <div class="tm-header uk-flex uk-flex-middle uk-flex-column">
+
+                <?php if ($params['logo']) : ?>
+                <a class="tm-logo uk-hidden-small" href="<?= $view->url()->get() ?>">
+                    <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                </a>
+                <?php endif ?>
+
+                <nav class="uk-navbar <?= ($params['contrast']) ? 'tm-navbar-contrast' : '' ?>">
 
                     <?php if ($params['logo']) : ?>
-                    <a class="tm-logo uk-hidden-small" href="<?= $view->url()->get() ?>">
-                        <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                    <a class="uk-navbar-brand uk-visible-small" href="<?= $view->url()->get() ?>">
+                        <img class="uk-responsive-height" src="<?= ($params['logo_small']) ? $this->escape($params['logo_small']) : $this->escape($params['logo']) ?>" alt="">
                     </a>
                     <?php endif ?>
 
-                    <nav class="uk-navbar">
+                    <?php if ($view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
+                    <div class="uk-hidden-small">
+                        <?= $view->menu('main', 'menu-navbar.php') ?>
+                        <?= $view->position('navbar', 'position-blank.php') ?>
+                    </div>
+                    <?php endif ?>
 
-                        <?php if ($params['logo']) : ?>
-                        <a class="uk-navbar-brand uk-visible-small" href="<?= $view->url()->get() ?>">
-                            <img class="uk-responsive-height" src="<?= ($params['logo_small']) ? $this->escape($params['logo_small']) : $this->escape($params['logo']) ?>" alt="">
-                        </a>
-                        <?php endif ?>
+                    <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
+                    <div class="uk-navbar-flip uk-visible-small">
+                        <a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
+                    </div>
+                    <?php endif ?>
 
-                        <?php if ($view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
-                        <div class="uk-hidden-small">
-                            <?= $view->menu('main', 'menu-navbar.php') ?>
-                            <?= $view->position('navbar', 'position-blank.php') ?>
-                        </div>
-                        <?php endif ?>
+                </nav>
 
-                        <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
-                        <div class="uk-navbar-flip uk-visible-small">
-                            <a href="#offcanvas" class="uk-navbar-toggle" data-uk-offcanvas></a>
-                        </div>
-                        <?php endif ?>
-
-                    </nav>
-
-                </div>
             </div>
             <?php endif ?>
 
@@ -57,13 +55,13 @@
 
             <div id="tm-main" class="tm-main uk-grid" data-uk-grid-match data-uk-grid-margin>
 
-                <main class="<?= $view->position()->exists('sidebar') ? 'uk-width-medium-3-4' : 'uk-width-1-1'; ?>">
+                <main class="<?= $view->position()->exists('sidebar') ? 'uk-width-medium-2-3' : 'uk-width-1-1'; ?>">
                     <?= $view->render('messages') ?>
                     <?= $view->render('content') ?>
                 </main>
 
                 <?php if ($view->position()->exists('sidebar')) : ?>
-                <aside class="uk-width-medium-1-4 <?= $params['sidebar_first'] ? 'uk-flex-order-first-medium' : ''; ?>">
+                <aside class="uk-width-medium-1-3 <?= $params['sidebar_first'] ? 'uk-flex-order-first-medium' : ''; ?>">
                     <?= $view->position('sidebar', 'position-panel.php') ?>
                 </aside>
                 <?php endif ?>
@@ -76,19 +74,15 @@
             </section>
             <?php endif; ?>
 
-            <?php if ($view->position()->exists('footer')) : ?>
-            <div id="tm-footer" class="tm-footer uk-block uk-block-muted">
-                <div class="uk-container uk-container-center uk-text-center">
-
-                    <section class="uk-grid uk-grid-match" data-uk-grid-margin>
-                        <?= $view->position('footer', 'position-grid.php') ?>
-                    </section>
-
-                </div>
-            </div>
-            <?php endif; ?>
-
         </div>
+
+        <?php if ($view->position()->exists('footer')) : ?>
+        <div id="tm-footer" class="tm-footer uk-block uk-block-muted uk-margin-large-top">
+            <div class="uk-container uk-container-center uk-text-center">
+                <?= $view->position('footer', 'position-panel.php') ?>
+            </div>
+        </div>
+        <?php endif; ?>
 
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
         <div id="offcanvas" class="uk-offcanvas">
