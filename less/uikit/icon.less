@@ -7,6 +7,8 @@
 // Variables
 // ========================================================================
 
+@icon-small-font-size:                          20px;
+
 @icon-hover-color:                              @global-muted-color;
 @icon-hover-hover-color:                        @global-dark-color;
 
@@ -48,4 +50,8 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-icon-misc() {}
+.hook-icon-misc() {
+
+    .uk-icon-hover + .uk-icon-hover  { margin-left: 10px; }
+
+}

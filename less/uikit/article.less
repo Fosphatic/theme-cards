@@ -7,11 +7,11 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            @grid-gutter-vertical;
+@article-margin-top:                            45px;
 
 @article-title-font-size:                       round((@global-font-size * 2.6)); // 36px / 42px
 @article-title-line-height:                     round((@article-title-font-size * 1.154)); // 42px / 48px
-@article-title-font-weight:                     300;
+@article-title-font-weight:                     400;
 
 @article-meta-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
 @article-meta-line-height:                      round((@article-meta-font-size * 1.46)); // 18px / 20px
@@ -29,7 +29,7 @@
 // New
 //
 
-@article-padding:                               35px;
+@article-padding:                               70px;
 
 
 // Sub-object `uk-article-title`
@@ -76,7 +76,7 @@
         color: @global-color;
     }
 
-    .uk-article-title a:hover { border-bottom: 1px solid @global-color; }
+    .uk-article-title a:hover { color: @global-muted-color; }
 
     .uk-article .uk-subnav a:hover,
     .uk-article .uk-subnav a:focus { text-decoration: underline; }
