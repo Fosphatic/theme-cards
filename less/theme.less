@@ -26,11 +26,11 @@ body { background-attachment: fixed; }
  ========================================================================== */
 
 .tm-header {
-    margin-top: 150px;
+    margin-top: 100px;
     margin-bottom: 50px;
 }
 
-.tm-logo { margin-bottom: 30px; }
+.tm-logo { margin-bottom: 10px; }
 
 
 /* Phone landscape and smaller */
@@ -113,11 +113,13 @@ body { background-attachment: fixed; }
 
 .tm-article-teaser {
     margin: -@article-padding -@article-padding @article-padding -@article-padding;
-    margin-left: @panel-box-teaser-margin;
-    margin-right: @panel-box-teaser-margin;
+    margin-left: -@article-padding;
+    margin-right: -@article-padding;
 }
 
 .tm-container-small {
-    max-width: 750px;
+    max-width: 880px;
     margin: auto;
 }
+
+ul:last-child { margin-bottom: 0; }
