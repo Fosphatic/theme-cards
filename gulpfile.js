@@ -35,6 +35,6 @@ gulp.task('compile', function () {
 /**
  * Watch for changes in files
  */
-gulp.task('watch', function () {
-    gulp.watch('less/*.less', ['compile']);
+gulp.task('watch', function (cb) {
+    gulp.watch('**/*.less', ['compile']);
 });
