@@ -9,8 +9,8 @@
 
 @alert-margin-vertical:                         @global-margin;
 
-@alert-background:                              #e1f2fb;
-@alert-color:                                   #4091D2;
+@alert-background:                              @global-default-background;
+@alert-color:                                   @global-color;
 
 @alert-success-background:                      #ecf7e9;
 @alert-success-color:                           #80c96d;
@@ -21,11 +21,21 @@
 @alert-danger-background:                       #fde7e7;
 @alert-danger-color:                            #F05D54;
 
+//
+// New
+//
+
+@alert-font-size:                               14px;
+@alert-line-height:                             24px;
+
 
 // Component
 // ========================================================================
 
-.hook-alert() {}
+.hook-alert() {
+    font-size: @alert-font-size;
+    line-height: @alert-line-height;
+}
 
 
 // Modifier: `uk-alert-success`
@@ -49,4 +59,9 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-alert-misc() {}
+.hook-alert-misc() {
+
+    .uk-alert .uk-close { opacity: 0.2; }
+    .uk-alert .uk-close:hover { opacity: 1; }
+
+}
