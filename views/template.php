@@ -78,7 +78,7 @@
 
         <?php if ($view->position()->exists('footer')) : ?>
         <div id="tm-footer" class="tm-footer uk-block uk-block-muted uk-margin-large-top">
-            <div class="uk-container uk-container-center uk-text-center">
+            <div class="uk-container uk-container-center">
                 <?= $view->position('footer', 'position-panel.php') ?>
             </div>
         </div>
