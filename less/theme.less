@@ -19,19 +19,19 @@ html { overflow-y: scroll; }
 /* Background Image
  ========================================================================== */
 
-body { background-attachment: fixed; }
+.tm-background {
+    padding-top: 100px;
+    padding-bottom: 50px;
+    background-attachment: fixed;
+}
 
 
 /* Header
  ========================================================================== */
 
-.tm-header {
-    margin-top: 100px;
-    margin-bottom: 50px;
-}
+.tm-header { margin-bottom: 50px; }
 
 .tm-logo { margin-bottom: 10px; }
-
 
 /* Phone landscape and smaller */
 @media (max-width: @breakpoint-small-max) {
@@ -105,21 +105,13 @@ body { background-attachment: fixed; }
 
 }
 
-.tm-footer .uk-panel + .uk-panel { margin-top: @global-grid-gutter; }
-
 
 /* Blog
  ========================================================================== */
 
-.tm-article-teaser {
-    margin: -@article-padding -@article-padding @article-padding -@article-padding;
-    margin-left: -@article-padding;
-    margin-right: -@article-padding;
-}
+.tm-article-teaser { margin: -@article-padding -@article-padding @article-padding -@article-padding; }
 
 .tm-container-small {
     max-width: 880px;
     margin: auto;
 }
-
-ul:last-child { margin-bottom: 0; }
