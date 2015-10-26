@@ -79,7 +79,7 @@
         <?php if ($view->position()->exists('footer')) : ?>
         <div id="tm-footer" class="tm-footer uk-block uk-block-muted uk-margin-large-top">
             <div class="uk-container uk-container-center">
-                <?= $view->position('footer', 'position-panel.php') ?>
+                <?= $view->position('footer', 'position-grid.php') ?>
             </div>
         </div>
         <?php endif; ?>
