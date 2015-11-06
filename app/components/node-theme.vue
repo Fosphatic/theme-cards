@@ -47,7 +47,7 @@
                 <p class="uk-form-controls-condensed">
                     <label><input type="checkbox" v-model="node.theme.contrast_alt"> {{ 'Invert colors' | trans }}</label>
                 </p>
-                <p class="uk-form-controls-condensed uk-form-width-large"><input-image source="{{@ node.theme.image_alt }}"></input-image></p>
+                <p class="uk-form-controls-condensed uk-form-width-large"><input-image :source.sync="node.theme.image_alt"></input-image></p>
                 <p class="uk-form-help-block">{{ 'Select an alternative image for the page.' | trans }}</p>
             </div>
         </div>
