@@ -2,7 +2,7 @@
 
 <div id="comments" class="uk-margin-large-top" v-if="config.enabled || comments.length">
 
-    <template v-show="comments.length">
+    <template v-if="comments.length">
 
         <h2 class="uk-h4">{{ 'Comments (%count%)' | trans {count:count} }}</h2>
 
