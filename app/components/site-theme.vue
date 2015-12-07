@@ -52,7 +52,21 @@
             priority: 15
         },
 
-        props: ['config']
+        data: function () {
+            return _.extend({config: {}}, window.$theme);
+        },
+
+        events: {
+
+            save: function() {
+
+                this.$http.post('admin/system/settings/config', {name: this.name, config: this.config}).error(function (data) {
+                    this.$notify(data, 'danger');
+                });
+
+            }
+
+        }
 
     };
 
