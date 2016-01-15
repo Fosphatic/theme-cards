@@ -79,7 +79,7 @@
         </div>
 
         <?php if ($view->position()->exists('footer')) : ?>
-        <div id="tm-footer" class="tm-footer uk-block uk-block-muted">
+        <div id="tm-footer" class="tm-footer uk-block">
             <div class="uk-container uk-container-center">
 
                 <section class="uk-grid uk-grid-match" data-uk-grid-margin>
