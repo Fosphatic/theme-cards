@@ -8,7 +8,7 @@
 // ========================================================================
 
 @base-body-background:                          @global-background;
-@base-body-font-family:                         'Roboto', Helvetica, Arial, sans-serif;
+@base-body-font-family:                         'Lora', Helvetica, Arial, sans-serif;
 @base-body-font-size:                           @global-font-size;
 @base-body-line-height:                         @global-line-height;
 @base-body-color:                               @global-color;
@@ -23,8 +23,8 @@
 
 @base-margin-vertical:                          @global-margin;
 
-@base-heading-font-family:                      'Josefin Sans', Helvetica, Arial, sans-serif;
-@base-heading-font-weight:                      400;
+@base-heading-font-family:                      @global-font-family;
+@base-heading-font-weight:                      300;
 @base-heading-color:                            @global-dark-color;
 @base-heading-margin-top:                       @global-margin-large;
 @base-h1-font-size:                             round((@global-font-size * 2.6)); // 42px
@@ -62,6 +62,9 @@
 
 @base-code-border:                              @global-border;
 @base-pre-border:                               @global-border;
+@base-blockquote-icon:                          '\201C';
+@base-blockquote-icon-size:                     90px;
+@base-blockquote-font-family:                   'Playfair Display';
 
 
 // Body
@@ -120,7 +123,6 @@
 // ========================================================================
 
 .hook-base-blockquote() {
-    text-align: center;
     color: @global-dark-color;
     font-weight: 300;
 }
@@ -138,4 +140,26 @@
 // Miscellaneous
 // ========================================================================
 
-.hook-base-misc() {}
+.hook-base-misc() {
+
+     blockquote {
+
+        position: relative;
+
+        @media (min-width: @breakpoint-medium) {
+
+            &::before {
+                display: block;
+                left: -40px;
+                top: 14px;
+                position: absolute;
+                content: @base-blockquote-icon;
+                font-size: @base-blockquote-icon-size;
+                font-family: @base-blockquote-font-family;
+                font-style: normal;
+            }
+
+        }
+    }
+
+}
