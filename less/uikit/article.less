@@ -18,8 +18,8 @@
 @article-meta-color:                            @global-muted-color;
 
 @article-lead-color:                            @global-dark-color;
-@article-lead-font-size:                        16px;
-@article-lead-line-height:                      28px;
+@article-lead-font-size:                        round((@global-font-size * 1.14)); // 16px
+@article-lead-line-height:                      round((@article-lead-font-size * 1.625)); // 26px
 @article-lead-font-weight:                      300;
 
 @article-divider-margin:                        @global-margin-large;

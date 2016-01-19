@@ -9,16 +9,26 @@
 
 @breadcrumb-font-size:                          round((@global-font-size * 0.85)); // 12px / 14px
 
-@breadcrumb-disabled-color:                     fade(@global-muted-color, 50%);
+@breadcrumb-divider:                            "|";
 @breadcrumb-divider-margin:                     12px;
+
+@breadcrumb-disabled-color:                     fade(@global-muted-color, 50%);
+
+//
+// New
+//
+
+@breadcrumb-font-family:                        'Lato', Helvetica, Arial, sans-serif;
+@breadcrumb-text-transform:                     uppercase;
 
 
 // Component
 // ========================================================================
 
 .hook-breadcrumb() {
+    font-family: @breadcrumb-font-family;
     color: @global-muted-color;
-    text-transform: uppercase;
+    text-transform: @breadcrumb-text-transform;
 }
 
 
@@ -34,6 +44,7 @@
 .hook-breadcrumb-misc() {
 
     .uk-breadcrumb > li > a { color: @global-muted-color; }
+
     .uk-breadcrumb > li > a:hover {
         color: @global-color;
         text-decoration: none;

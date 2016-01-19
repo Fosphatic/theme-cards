@@ -8,8 +8,8 @@
 // ========================================================================
 
 @panel-title-margin-bottom:                     @global-margin;
-@panel-title-font-size:                         24px;
-@panel-title-line-height:                       34px;
+@panel-title-font-size:                         20px;
+@panel-title-line-height:                       30px;
 @panel-title-font-weight:                       300;
 @panel-title-color:                             @global-dark-color;
 
@@ -22,13 +22,13 @@
 
 @panel-box-teaser-margin:                       -(@panel-box-padding);
 
-@panel-box-badge-top:                           0;
+@panel-box-badge-top:                           10px;
 
-@panel-box-primary-background:                  @global-default-hover-background;
-@panel-box-primary-color:                       @global-color;
-@panel-box-primary-title-color:                 @global-dark-color;
+@panel-box-primary-background:                  @global-primary-background;
+@panel-box-primary-color:                       @global-contrast-color;
+@panel-box-primary-title-color:                 @global-contrast-color;
 
-@panel-box-secondary-background:                @global-default-background;
+@panel-box-secondary-background:                #F8F8F8;
 @panel-box-secondary-color:                     @global-color;
 @panel-box-secondary-title-color:               @global-dark-color;
 
@@ -47,6 +47,16 @@
 @panel-divider-gutter:                          @global-grid-gutter;
 @panel-divider-gutter-large:                    @global-grid-gutter-large;
 @panel-divider-border:                          @global-border;
+@panel-divider-border-width:                    2px;
+
+//
+// New
+//
+
+
+
+@panel-divider-font-family:                    inherit;
+@panel-divider-font-style:                     italic;
 
 
 // Sub-object: `uk-panel-title`
@@ -72,7 +82,49 @@
 // Sub-modifier: `uk-panel-box-primary`
 //
 
-.hook-panel-box-primary() {}
+.hook-panel-box-primary() {
+
+    // Hyperlink
+    > a:not([class]),
+    > :not([class*='uk-nav']) a:not([class]) {
+
+        color: lighten(@panel-box-primary-background, 30%);
+
+        &:hover { color: @panel-box-primary-color; }
+
+    }
+
+    // Button component
+    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger) {
+
+        border-color: @global-contrast-color;
+        color: @global-contrast-color;
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: @global-contrast-color;
+            background: @global-contrast-color;
+            color: @global-primary-background;
+        }
+
+    }
+
+    .uk-button-primary {
+
+        background: fade(@global-contrast-color, 10%);
+
+        &:hover,
+        &:active,
+        &:focus {
+            border-color: @global-contrast-color;
+            background: @global-contrast-color;
+            color: @global-primary-background;
+        }
+
+    }
+
+}
 
 .hook-panel-box-primary-hover() {}
 
@@ -104,9 +156,9 @@
 
 .hook-panel-misc() {
 
-    .uk-panel-space .uk-panel-badge {
-        top: 0;
-        right: 0;
+    .uk-panel-divider .uk-panel-title {
+        font-family: @panel-divider-font-family;
+        font-style: @panel-divider-font-style;
     }
 
 }
