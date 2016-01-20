@@ -67,14 +67,16 @@
 //
 
 @button-border-radius:                          50px;
-@button-font-family:                            'Lato', Helvetica, Arial, sans-serif;
+@button-font-family:                            @global-alternate-font-family;
 @button-text-transform:                         uppercase;
 
 @button-border-hover-color:                     @button-hover-background;
 @button-border-active-color:                    @button-active-background;
 @button-font-weight:                            400;
 
-@button-primary-border-color:                   @global-primary-background;
+@button-primary-border:                         @global-primary-background;
+@button-primary-hover-border:                   @button-primary-hover-background;
+@button-primary-active-border:                  @button-primary-active-background;
 
 
 // Component
@@ -102,11 +104,11 @@
 // Modifier: `uk-button-primary`
 //
 
-.hook-button-primary() { border-color: @button-primary-border-color; }
+.hook-button-primary() { border-color: @button-primary-border; }
 
-.hook-button-primary-hover() { border-color: @button-primary-border-color; }
+.hook-button-primary-hover() { border-color: @button-primary-hover-border; }
 
-.hook-button-primary-active() { border-color: @button-primary-active-background; }
+.hook-button-primary-active() { border-color: @button-primary-active-border; }
 
 //
 // Modifier: `uk-button-success`

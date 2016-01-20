@@ -11,7 +11,18 @@
 
 @offcanvas-bar-background:                      #111;
 
+@offcanvas-panel-color:                         fade(@global-contrast-color, 50%);
 @offcanvas-panel-title-color:                   @global-contrast-color;
+@offcanvas-panel-link-color:                    fade(@global-contrast-color, 80%);
+@offcanvas-panel-link-hover-color:              @global-contrast-color;
+
+@offcanvas-panel-margin:                        20px @nav-offcanvas-padding-horizontal;
+
+//
+// New
+//
+
+@offcanvas-bar-padding-vertical:                10px;
 
 
 // Component
@@ -23,7 +34,7 @@
 // Sub-object `uk-offcanvas-bar`
 // ========================================================================
 
-.hook-offcanvas-bar() {}
+.hook-offcanvas-bar() { padding: @offcanvas-bar-padding-vertical 0; }
 
 
 // Panel in offcanvas

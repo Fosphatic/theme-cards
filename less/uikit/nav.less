@@ -7,10 +7,10 @@
 // Variables
 // ========================================================================
 
-@nav-padding-vertical:                          4px;
+@nav-padding-vertical:                          6px;
 @nav-padding-horizontal:                        30px;
 
-@nav-header-font-size:                          13px;
+@nav-header-font-size:                          12px;
 @nav-header-font-weight:                        normal;
 @nav-header-margin-top:                         @global-margin;
 
@@ -19,6 +19,7 @@
 @nav-subtitle-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
 @nav-subtitle-line-height:                      round((@nav-subtitle-font-size * 1.46)); // 18px / 20px
 
+@nav-sub-padding-vertical:                      15px;
 @nav-sub-padding-left:                          30px;
 
 @nav-parent-icon-width:                         @global-line-height;
@@ -44,29 +45,31 @@
 
 @nav-navbar-color:                              @global-contrast-color;
 @nav-navbar-hover-background:                   transparent;
-@nav-navbar-hover-color:                        fade(@global-contrast-color, 60%);
+@nav-navbar-hover-color:                        fade(@nav-navbar-color, 60%);
 @nav-navbar-header-color:                       @global-contrast-color;
 @nav-navbar-divider-border:                     rgba(255, 255, 255, 0.06);
 @nav-navbar-nested-color:                       @global-muted-color;
-@nav-navbar-nested-hover-color:                 @global-dark-color;
+@nav-navbar-nested-hover-color:                 @global-contrast-color;
 
-@nav-offcanvas-color:                           @offcanvas-panel-link-color;
-@nav-offcanvas-hover-background:                lighten(@offcanvas-bar-background, 5%);
-@nav-offcanvas-hover-color:                     @offcanvas-panel-link-hover-color;
-@nav-offcanvas-active-background:               darken(@offcanvas-bar-background, 10%);
+@nav-offcanvas-padding-horizontal:              30px;
+@nav-offcanvas-color:                           @global-contrast-color;
+@nav-offcanvas-hover-background:                transparent;
+@nav-offcanvas-hover-color:                     fade(@nav-offcanvas-color, 60%);
+@nav-offcanvas-active-background:               transparent;
 @nav-offcanvas-active-color:                    @offcanvas-panel-link-hover-color;
 @nav-offcanvas-header-color:                    @offcanvas-panel-color;
 @nav-offcanvas-divider-border:                  fade(lighten(@offcanvas-bar-background, 20%), 30%);
-@nav-offcanvas-nested-color:                    @offcanvas-panel-link-color;
+@nav-offcanvas-nested-color:                    fade(@nav-offcanvas-color, 60%);
 @nav-offcanvas-nested-hover-color:              @offcanvas-panel-link-hover-color;
 
 //
 // New
 //
 
-@nav-font-family:                               'Lato', Helvetica, Arial, sans-serif;
-@nav-dropdown-font-size:                         12px;
-@nav-header-font-family:                        'Lato', Helvetica, Arial, sans-serif;
+@nav-font-family:                               @global-alternate-font-family;
+@nav-dropdown-font-size:                        12px;
+@nav-text-transform:                            uppercase;
+@nav-header-font-family:                        @global-alternate-font-family;
 
 @nav-side-padding-horizontal:                   0;
 @nav-side-nested-padding-left:                  10px;
@@ -87,7 +90,7 @@
 // Sub-object: `uk-nav-sub`
 // ========================================================================
 
-.hook-nav-sub() {}
+.hook-nav-sub() { padding: 0 0 @nav-sub-padding-vertical @nav-sub-padding-left;}
 
 
 // Modifier: `uk-nav-parent-icon`
@@ -159,11 +162,7 @@
 // Items
 //
 
-.hook-nav-navbar() {
-    font-family: @nav-font-family;
-    font-size: @nav-dropdown-font-size;
-    text-transform: uppercase;
-}
+.hook-nav-navbar() {}
 
 // Hover
 .hook-nav-navbar-hover() {}
@@ -192,7 +191,14 @@
 // Items
 //
 
-.hook-nav-offcanvas() {}
+.hook-nav-offcanvas() {
+    margin: 0 @nav-offcanvas-padding-horizontal;
+    padding-left: 0;
+    padding-right: 0;
+    border-top: 1px solid lighten(@offcanvas-bar-background, 8%);
+    -webkit-transition: color 0.05s linear;
+    transition: color 0.05s linear;
+}
 
 // Hover
 .hook-nav-offcanvas-hover() {}
@@ -210,13 +216,25 @@
 // Sub-object: `uk-nav-divider`
 //
 
-.hook-nav-offcanvas-divider() {}
+.hook-nav-offcanvas-divider() { margin: @nav-divider-margin-vertical @nav-offcanvas-padding-horizontal; }
 
 
 // Miscellaneous
 // ========================================================================
 
 .hook-nav-misc() {
+
+    .uk-nav a {
+        -webkit-transition: all 0.1s ease-in-out;
+        transition: all 0.1s ease-in-out;
+    }
+
+    .uk-nav {
+        font-family: @nav-font-family;
+        font-size: @nav-dropdown-font-size;
+        text-transform: @nav-text-transform;
+
+    }
 
     // Nav side nested padding
     .uk-nav-side ul.uk-nav-sub { padding-left: @nav-side-nested-padding-left; }
@@ -228,22 +246,15 @@
     .uk-nav-side li:first-child a,
     .uk-nav-side .uk-nav-divider + li a { border-top: none; }
 
-    // Nav in dropdown
-    .uk-nav-dropdown > li.uk-active > a,
-    .uk-nav-navbar > li.uk-active > a {
-        background: #f8f8f8;
-        color: @global-dark-color;
-    }
-
     .uk-dropdown .uk-nav-sub > li.uk-nav-header {
         padding-left: 0;
         padding-right: 0;
     }
 
-    .uk-dropdown .uk-nav-dropdown li.uk-active > a,
-    .uk-nav-navbar li.uk-active > a {
-        background: #f8f8f8;
-        color: @global-dark-color;
-    }
+    // `uk-nav-offcanvas`
+
+    .uk-nav-offcanvas li:first-child a,
+    .uk-nav-offcanvas .uk-nav-header + li a,
+    .uk-nav-offcanvas .uk-nav-divider + li a { border-top: none; }
 
 }

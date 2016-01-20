@@ -8,7 +8,7 @@
 // ========================================================================
 
 @base-body-background:                          @global-background;
-@base-body-font-family:                         'Lora', Helvetica, Arial, sans-serif;
+@base-body-font-family:                         @global-font-family;
 @base-body-font-size:                           @global-font-size;
 @base-body-line-height:                         @global-line-height;
 @base-body-color:                               @global-color;
@@ -24,16 +24,16 @@
 
 @base-margin-vertical:                          @global-margin;
 
-@base-heading-font-family:                      @global-font-family;
+@base-heading-font-family:                      @global-alternate-font-family;
 @base-heading-font-weight:                      300;
 @base-heading-color:                            @global-dark-color;
 @base-heading-margin-top:                       @global-margin-large;
 @base-h1-font-size:                             round((@global-font-size * 2.6)); // 36px
 @base-h1-line-height:                           round((@base-h1-font-size * 1.27)); // 48px
-@base-h2-font-size:                             round((@global-font-size * 2)); // 28px
-@base-h2-line-height:                           round((@base-h2-font-size * 1.35)); // 38px
-@base-h3-font-size:                             round((@global-font-size * 1.71)); // 24px
-@base-h3-line-height:                           round((@base-h3-font-size * 1.545)); // 34px
+@base-h2-font-size:                             round((@global-font-size * 1.85)); // 26px
+@base-h2-line-height:                           round((@base-h2-font-size * 1.3)); // 34px
+@base-h3-font-size:                             round((@global-font-size * 1.57)); // 22px
+@base-h3-line-height:                           round((@base-h3-font-size * 1.45)); // 32px
 @base-h4-font-size:                             round((@global-font-size * 1.28)); // 18px
 @base-h4-line-height:                           round((@base-h4-font-size * 1.44)); // 26px
 @base-h5-font-size:                             round((@global-font-size * 1.14)); // 16px
