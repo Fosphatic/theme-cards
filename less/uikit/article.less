@@ -29,7 +29,8 @@
 // New
 //
 
-@article-padding:                               60px;
+@article-padding:                               40px;
+@article-large-padding:                         70px;
 
 
 // Sub-object `uk-article-title`
@@ -73,8 +74,15 @@
     .uk-article {
         padding: @article-padding;
         background: @global-background;
-        color: @global-color;
     }
+
+    /* Tablet and bigger */
+    @media (min-width: @breakpoint-medium) {
+
+        .uk-article { padding: @article-large-padding; }
+
+    }
+
 
     .uk-article-title a:hover { color: @global-muted-color; }
 

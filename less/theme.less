@@ -19,7 +19,10 @@ html { overflow-y: scroll; }
 /* Background Image
  ========================================================================== */
 
-.tm-background { background-attachment: fixed; }
+.tm-background {
+    padding-bottom: 20px;
+    background-attachment: fixed;
+}
 
 /* Phone landscape and bigger */
 @media (min-width: @breakpoint-medium) {
@@ -119,6 +122,13 @@ html { overflow-y: scroll; }
  ========================================================================== */
 
 .tm-article-teaser { margin: -@article-padding -@article-padding @article-padding -@article-padding; }
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-article-teaser { margin: -@article-large-padding -@article-large-padding @article-large-padding -@article-large-padding; }
+
+}
 
 .tm-container-small {
     max-width: 900px;
