@@ -148,12 +148,11 @@
 
     mark { font-style: italic; }
 
-    blockquote { position: relative; }
+    blockquote {
 
-    /* Only xlarge screens */
-    @media (min-width: @breakpoint-medium) {
+        position: relative;
 
-        blockquote:before {
+        &:before {
             display: block;
             left: -40px;
             top: 14px;
@@ -165,6 +164,5 @@
         }
 
     }
-
 
 }
