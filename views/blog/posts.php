@@ -44,7 +44,7 @@
     ?>
 
     <?php if ($total > 1) : ?>
-    <ul class="uk-pagination">
+    <ul class="uk-pagination uk-margin-bottom-remove">
 
 
         <?php for($i=1;$i<=$total;$i++): ?>

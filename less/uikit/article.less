@@ -7,10 +7,10 @@
 // Variables
 // ========================================================================
 
-@article-margin-top:                            45px;
+@article-margin-top:                            @global-grid-gutter;
 
-@article-title-font-size:                       42px;
-@article-title-line-height:                     48px;
+@article-title-font-size:                       38px;
+@article-title-line-height:                     46px;
 @article-title-font-weight:                     300;
 
 @article-meta-font-size:                        14px;
@@ -31,6 +31,10 @@
 
 @article-padding:                               40px;
 @article-large-padding:                         70px;
+@article-large-margin-top:                      45px;
+
+@article-title-large-font-size:                 42px;
+@article-title-large-line-height:               48px;
 
 
 // Sub-object `uk-article-title`
@@ -80,6 +84,13 @@
     @media (min-width: @breakpoint-medium) {
 
         .uk-article { padding: @article-large-padding; }
+
+        .uk-article + .uk-article { margin-top: @article-large-margin-top; }
+
+        .uk-article-title {
+            font-size: @article-title-large-font-size;
+            line-height: @article-title-large-line-height;
+        }
 
     }
 
