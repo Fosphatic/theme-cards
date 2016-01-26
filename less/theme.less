@@ -34,6 +34,16 @@ html { overflow-y: scroll; }
 
 }
 
+/* Tablets portrait */
+@media (min-width: @breakpoint-medium) and (max-width: @breakpoint-medium-max) {
+
+        .tm-background {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+}
+
 
 /* Header
  ========================================================================== */
@@ -104,15 +114,25 @@ html { overflow-y: scroll; }
  * Footer
  */
 
+.tm-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Lato';
+}
 
-.tm-footer { font-family: 'Lato'; }
+/* Phone landscape and smaller*/
+@media (max-width: @breakpoint-small-max) {
 
-/* Phone landscape and bigger */
+    .tm-footer .uk-float-right { float: none; }
+
+}
+
+/* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
     .tm-footer {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
 }

@@ -56,8 +56,8 @@
 // New
 //
 
-@form-stacked-font-size:                        round((@global-font-size * 0.85)); // 12px / 14px
-@form-stacked-line-height:                      round((@form-stacked-font-size *  1.46)); // 18px / 20px
+@form-stacked-font-size:                        @global-font-size;
+@form-stacked-line-height:                      @form-stacked-font-size;
 
 
 // Component
@@ -103,6 +103,7 @@
 // ========================================================================
 
 .hook-form-stacked-label() {
+    font-family: @global-alternate-font-family;
     font-size: @form-stacked-font-size;
     line-height: @form-stacked-line-height;
 }

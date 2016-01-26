@@ -155,12 +155,22 @@
         &:before {
             display: block;
             left: -40px;
-            top: 14px;
+            top: 10px;
             position: absolute;
             content: @base-blockquote-icon;
             font-size: @base-blockquote-icon-size;
             font-family: @base-blockquote-font-family;
             font-style: normal;
+        }
+
+    }
+
+    /* Phone landscape and smaller*/
+    @media (max-width: @breakpoint-small-max) {
+
+        blockquote:before {
+            left: -20px;
+            font-size: (@base-blockquote-icon-size - 20px);
         }
 
     }
