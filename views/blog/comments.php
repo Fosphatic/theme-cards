@@ -73,7 +73,7 @@
 
     <div class="uk-margin-large-top js-comment-reply">
 
-        <h2 class="uk-h3">{{ 'Leave a comment' | trans }}</h2>
+        <h2 class="uk-h4">{{ 'Leave a comment' | trans }}</h2>
 
         <div class="uk-alert uk-alert-danger" v-show="error">{{ error }}</div>
 
