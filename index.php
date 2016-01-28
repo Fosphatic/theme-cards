@@ -81,6 +81,7 @@ return [
 
         'logo_small' => '',
         'logo_contrast' => '',
+        'logo_offcanvas' => '',
         'image' => '',
         // TODO
         'contrast' => ''
