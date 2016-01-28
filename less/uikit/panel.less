@@ -82,49 +82,7 @@
 // Sub-modifier: `uk-panel-box-primary`
 //
 
-.hook-panel-box-primary() {
-
-    // Hyperlink
-    > a:not([class]),
-    > :not([class*='uk-nav']) a:not([class]) {
-
-        color: lighten(@panel-box-primary-background, 30%);
-
-        &:hover { color: @panel-box-primary-color; }
-
-    }
-
-    // Button component
-    .uk-button:not(.uk-button-primary):not(.uk-button-success):not(.uk-button-danger) {
-
-        border-color: @global-contrast-color;
-        color: @global-contrast-color;
-
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: @global-contrast-color;
-            background: @global-contrast-color;
-            color: @global-primary-background;
-        }
-
-    }
-
-    .uk-button-primary {
-
-        background: fade(@global-contrast-color, 10%);
-
-        &:hover,
-        &:active,
-        &:focus {
-            border-color: @global-contrast-color;
-            background: @global-contrast-color;
-            color: @global-primary-background;
-        }
-
-    }
-
-}
+.hook-panel-box-primary() {}
 
 .hook-panel-box-primary-hover() {}
 
