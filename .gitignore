@@ -1,3 +1,5 @@
-**/app/bundle/**/*.js
-/css/*
+/app/bundle/*
+/css
+/node_modules
 .DS_Store
+.idea
