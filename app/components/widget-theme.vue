@@ -43,7 +43,7 @@
                 <select id="form-theme-panel" class="uk-form-width-large" v-model="widget.theme.panel">
                     <option value="">{{ 'None' | json }}</option>
                     <option value="uk-panel-box">{{ 'Box' | trans }}</option>
-                    <option value="uk-panel-box uk-panel-box-primary">{{ 'Box Primary' | trans }}</option>
+                    <option value="uk-panel-box uk-panel-box-primary uk-contrast">{{ 'Box Primary' | trans }}</option>
                     <option value="uk-panel-box uk-panel-box-secondary">{{ 'Box Secondary' | trans }}</option>
                     <option value="uk-panel-header">{{ 'Header' | trans }}</option>
                 </select>
