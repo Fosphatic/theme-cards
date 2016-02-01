@@ -26,7 +26,7 @@
 
                         <?php if ($params['logo']) : ?>
                         <a class="uk-navbar-brand uk-visible-small" href="<?= $view->url()->get() ?>">
-                            <img class="uk-responsive-height" src="<?= ($params['logo_small']) ? $this->escape($params['logo_small']) : $this->escape($params['logo']) ?>" alt="">
+                            <img class="uk-responsive-height" src="<?= $this->escape($params['logo']) ?>" alt="">
                         </a>
                         <?php endif ?>
 

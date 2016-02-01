@@ -12,14 +12,6 @@
     <div class="uk-form uk-form-horizontal">
 
         <div class="uk-form-row">
-            <label class="uk-form-label">{{ 'Logo Small' | trans }}</label>
-            <div class="uk-form-controls uk-form-width-large">
-                <input-image :source.sync="config.logo_small"></input-image>
-                <p class="uk-form-help-block">{{ 'Select an alternative logo which looks great on smaller devices.' | trans }}</p>
-            </div>
-        </div>
-
-        <div class="uk-form-row">
             <label class="uk-form-label">{{ 'Logo Contrast' | trans }}</label>
             <div class="uk-form-controls uk-form-width-large">
                 <input-image :source.sync="config.logo_contrast"></input-image>
