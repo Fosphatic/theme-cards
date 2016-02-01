@@ -83,7 +83,6 @@ return [
         'logo_contrast' => '',
         'logo_offcanvas' => '',
         'image' => '',
-        // TODO
         'contrast' => ''
 
     ],
@@ -115,15 +114,21 @@ return [
                 return;
             }
 
-            if ($event['image_alt']) {
+            if ($event['image'] || $event['image_alt']) {
 
-                $event['image'] = $event['image_alt'];
-                $event['contrast'] = $event['contrast_alt'];
+                if ($event['image_alt']) {
+
+                    $event['image'] = $event['image_alt'];
+                    $event['contrast'] = $event['contrast_alt'];
+
+                }
 
                 if ($event['contrast'] && $event['logo_contrast']) {
                     $event['logo'] = $event['logo_contrast'];
                 }
 
+            } else {
+                $event['contrast'] = false;
             }
 
         },
