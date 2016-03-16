@@ -41,13 +41,10 @@
         $page      = intval($page);
         $pageIndex = $page - 1;
 
-        // TODO
-        $contrast = '';
-
     ?>
 
     <?php if ($total > 1) : ?>
-    <ul class="uk-pagination uk-margin-bottom-remove <?= $contrast ? 'uk-contrast' : '' ?>">
+    <ul class="uk-pagination uk-margin-bottom-remove <?= $params['contrast'] ? 'uk-contrast' : '' ?>">
 
 
         <?php for($i=1;$i<=$total;$i++): ?>

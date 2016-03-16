@@ -3,8 +3,6 @@
 
     <?php
 
-        // TODO
-        $contrast = '';
         if ($params['contrast'] && ($widget->theme['panel'] == '' || $widget->theme['panel'] == 'uk-panel-header')) {
             $contrast = 'uk-contrast';
         }
