@@ -1,5 +1,5 @@
 # Changelog
 
-## 0.9.0 (September 10, 2015)
+## 1.0.0 (March 24, 2016)
 
 - Initial release
