@@ -16,11 +16,13 @@
                 <?php if ($params['logo'] || $view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
                 <div class="tm-header uk-flex uk-flex-middle uk-flex-column">
 
-                    <?php if ($params['logo']) : ?>
                     <a class="tm-logo uk-hidden-small" href="<?= $view->url()->get() ?>">
-                        <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                        <?php if ($params['logo']) : ?>
+                            <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                        <?php else : ?>
+                            <?= $app->config('system/site')->get('title') ?>
+                        <?php endif ?>
                     </a>
-                    <?php endif ?>
 
                     <nav class="uk-navbar <?= ($params['contrast']) ? 'tm-navbar-contrast' : '' ?>">
 
