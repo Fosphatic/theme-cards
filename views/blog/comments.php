@@ -73,7 +73,7 @@
 
     <div class="uk-margin-large-top js-comment-reply">
 
-        <h2 class="uk-h3">{{ 'Leave a comment' | trans }}</h2>
+        <h2 class="uk-h4">{{ 'Leave a comment' | trans }}</h2>
 
         <div class="uk-alert uk-alert-danger" v-show="error">{{ error }}</div>
 
@@ -121,7 +121,7 @@
 
         <template v-else>
             <p v-show="user.isAuthenticated">{{ 'You are not allowed to post comments.' | trans }}</p>
-            <p v-else>{{ 'Please login to leave a comment.' | trans }}</p>
+            <p v-else><a :href="login">{{ 'Please login to leave a comment.' | trans }}</a></p>
         </template>
 
     </div>

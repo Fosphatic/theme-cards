@@ -10,8 +10,8 @@
 @accordion-title-margin-bottom:                 0;
 @accordion-title-padding-vertical:              15px;
 @accordion-title-padding-horizontal:            40px;
-@accordion-title-font-size:                     20px;
-@accordion-title-line-height:                   25px;
+@accordion-title-font-size:                     round((@global-font-size * 1.28)); // 18px
+@accordion-title-line-height:                   round((@accordion-title-font-size * 1.22)); // 22px
 @accordion-title-background:                    transparent;
 
 //
@@ -55,8 +55,8 @@
         position: absolute;
         top: 20px;
         right: @accordion-title-padding-vertical;
-        height: 13px;
-        width: 13px;
+        height: 21px;
+        width: 21px;
         background: url("@{global-image-path}/plus.svg") 0 0 no-repeat;
     }
 

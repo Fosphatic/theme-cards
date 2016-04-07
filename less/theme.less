@@ -1,7 +1,7 @@
 @import "uikit/uikit.less";
 
-@icon-font-path: "../../../../../app/assets/uikit/fonts";
-@global-image-path: '../../less/uikit/images';
+@icon-font-path: "../../../../app/assets/uikit/fonts";
+@global-image-path: '../less/uikit/images';
 
 /* ========================================================================
    Theme
@@ -20,16 +20,35 @@ html { overflow-y: scroll; }
  ========================================================================== */
 
 .tm-background {
-    padding-top: 100px;
-    padding-bottom: 50px;
+    padding-bottom: @global-grid-gutter;
     background-attachment: fixed;
+}
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-background {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: @breakpoint-large) {
+
+    .tm-background {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+
 }
 
 
 /* Header
  ========================================================================== */
 
-.tm-header { margin-bottom: 50px; }
+.tm-header { margin-bottom: 35px; }
 
 .tm-logo { margin-bottom: 10px; }
 
@@ -95,12 +114,18 @@ html { overflow-y: scroll; }
  * Footer
  */
 
-/* Phone landscape and bigger */
+.tm-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-family: 'Lato';
+}
+
+/* Tablet and bigger */
 @media (min-width: @breakpoint-medium) {
 
     .tm-footer {
-        padding-top: 60px;
-        padding-bottom: 60px;
+        padding-top: 50px;
+        padding-bottom: 50px;
     }
 
 }
@@ -111,7 +136,34 @@ html { overflow-y: scroll; }
 
 .tm-article-teaser { margin: -@article-padding -@article-padding @article-padding -@article-padding; }
 
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .tm-article-teaser { margin: -@article-large-padding -@article-large-padding @article-large-padding -@article-large-padding; }
+
+}
+
 .tm-container-small {
-    max-width: 880px;
+    max-width: 900px;
     margin: auto;
+}
+
+
+/* User
+ ========================================================================== */
+
+.pk-user:extend(.uk-article all) {}
+
+/* Tablet and bigger */
+@media (min-width: @breakpoint-medium) {
+
+    .pk-user { width: 66.666%; }
+
+}
+
+/* Desktop and bigger */
+@media (min-width: @breakpoint-large) {
+
+    .pk-user { width: 50%; }
+
 }

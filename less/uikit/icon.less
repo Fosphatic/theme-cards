@@ -7,9 +7,14 @@
 // Variables
 // ========================================================================
 
+@icon-small-font-size:                          18px;
+@icon-medium-font-size:                         20px;
+@icon-large-font-size:                          22px;
+
 @icon-hover-color:                              @global-muted-color;
 @icon-hover-hover-color:                        @global-dark-color;
 
+@icon-button-width:                             40px;
 @icon-button-height:                            @icon-button-width;
 @icon-button-background:                        @global-primary-background;
 @icon-button-font-size:                         round((@icon-button-width * 0.5));
@@ -50,6 +55,8 @@
 
 .hook-icon-misc() {
 
-    .uk-icon-hover + .uk-icon-hover  { margin-left: 10px; }
+    .uk-icon-small,
+    .uk-icon-medium,
+    .uk-icon-large { line-height: @global-line-height; }
 
 }

@@ -79,10 +79,9 @@ return [
      */
     'config' => [
 
-        'logo_small' => '',
         'logo_contrast' => '',
+        'logo_offcanvas' => '',
         'image' => '',
-        // TODO
         'contrast' => ''
 
     ],
@@ -108,21 +107,29 @@ return [
         /**
          * Custom markup calculations based on theme settings
          */
-        'view.layout' => function ($event, $view) use ($app) {
+        'view.init' => function ($event, $view) use ($app) {
 
             if ($app->isAdmin()) {
                 return;
             }
 
-            if ($event['image_alt']) {
+            $params = $view->params;
 
-                $event['image'] = $event['image_alt'];
-                $event['contrast'] = $event['contrast_alt'];
+            if ($params['image'] || $params['image_alt']) {
 
-                if ($event['contrast'] && $event['logo_contrast']) {
-                    $event['logo'] = $event['logo_contrast'];
+                if ($params['image_alt']) {
+
+                    $params['image'] = $params['image_alt'];
+                    $params['contrast'] = $params['contrast_alt'];
+
                 }
 
+                if ($params['contrast'] && $params['logo_contrast']) {
+                    $params['logo'] = $params['logo_contrast'];
+                }
+
+            } else {
+                $params['contrast'] = false;
             }
 
         },

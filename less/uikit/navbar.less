@@ -14,15 +14,16 @@
 
 @navbar-nav-height:                             80px;
 @navbar-nav-line-height:                        @navbar-nav-height;
+@navbar-nav-padding-horizontal:                 20px;
 @navbar-nav-color:                              @global-dark-color;
-@navbar-nav-font-size:                          14px;
-@navbar-nav-font-family:                        'Roboto', Helvetica, Arial, sans-serif;
+@navbar-nav-font-size:                          13px;
+@navbar-nav-font-family:                        @global-alternate-font-family;
 @navbar-nav-hover-background:                   transparent;
-@navbar-nav-hover-color:                        @global-muted-color;
+@navbar-nav-hover-color:                        fade(@navbar-nav-color, 50%);
 @navbar-nav-onclick-background:                 transparent;
 @navbar-nav-onclick-color:                      @global-dark-color;
 @navbar-nav-active-background:                  transparent;
-@navbar-nav-active-color:                       @global-muted-color;
+@navbar-nav-active-color:                       fade(@navbar-nav-color, 50%);
 
 @navbar-brand-font-size:                        round((@global-font-size * 1.28)); // 18px / 20px
 @navbar-brand-color:                            @global-dark-color;
@@ -33,6 +34,12 @@
 @navbar-toggle-hover-color:                     @global-color;
 
 @navbar-toggle-icon:                            "";
+
+//
+// New
+//
+
+@navbar-brand-font-family:                        @global-alternate-font-family;
 
 
 // Component
@@ -51,7 +58,6 @@
     text-transform: uppercase;
     -webkit-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
-    letter-spacing: 1px;
 }
 
 // Hover
@@ -80,7 +86,7 @@
      */
 
     .uk-navbar-brand {
-        font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+        font-family: @navbar-brand-font-family;
         font-weight: bold;
         text-transform: uppercase;
         letter-spacing: 1px;

@@ -16,17 +16,19 @@
                 <?php if ($params['logo'] || $view->menu()->exists('main') || $view->position()->exists('navbar')) : ?>
                 <div class="tm-header uk-flex uk-flex-middle uk-flex-column">
 
-                    <?php if ($params['logo']) : ?>
                     <a class="tm-logo uk-hidden-small" href="<?= $view->url()->get() ?>">
-                        <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                        <?php if ($params['logo']) : ?>
+                            <img src="<?= $this->escape($params['logo']) ?>" alt="">
+                        <?php else : ?>
+                            <?= $params['title'] ?>
+                        <?php endif ?>
                     </a>
-                    <?php endif ?>
 
                     <nav class="uk-navbar <?= ($params['contrast']) ? 'tm-navbar-contrast' : '' ?>">
 
                         <?php if ($params['logo']) : ?>
                         <a class="uk-navbar-brand uk-visible-small" href="<?= $view->url()->get() ?>">
-                            <img class="uk-responsive-height" src="<?= ($params['logo_small']) ? $this->escape($params['logo_small']) : $this->escape($params['logo']) ?>" alt="">
+                            <img class="uk-responsive-height" src="<?= $this->escape($params['logo']) ?>" alt="">
                         </a>
                         <?php endif ?>
 
@@ -79,7 +81,7 @@
         </div>
 
         <?php if ($view->position()->exists('footer')) : ?>
-        <div id="tm-footer" class="tm-footer uk-block uk-block-muted">
+        <div id="tm-footer" class="tm-footer uk-block uk-block-default">
             <div class="uk-container uk-container-center">
 
                 <section class="uk-grid uk-grid-match" data-uk-grid-margin>
@@ -93,6 +95,14 @@
         <?php if ($view->position()->exists('offcanvas') || $view->menu()->exists('offcanvas')) : ?>
         <div id="offcanvas" class="uk-offcanvas">
             <div class="uk-offcanvas-bar uk-offcanvas-bar-flip">
+
+                <?php if ($params['logo_offcanvas']) : ?>
+                <div class="uk-panel uk-text-center">
+                    <a href="<?= $view->url()->get() ?>">
+                        <img src="<?= $this->escape($params['logo_offcanvas']) ?>" alt="">
+                    </a>
+                </div>
+                <?php endif ?>
 
                 <?php if ($view->menu()->exists('offcanvas')) : ?>
                     <?= $view->menu('offcanvas', ['class' => 'uk-nav-offcanvas']) ?>

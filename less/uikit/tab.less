@@ -8,17 +8,23 @@
 // ========================================================================
 
 @tab-border:                                    @global-border;
-@tab-padding-horizontal:                        24px;
 @tab-padding-vertical:                          15px;
 @tab-margin-horizontal:                         15px;
 @tab-color:                                     @global-color;
-@tab-hover-border:                              transparent;
+
 @tab-hover-background:                          transparent;
 @tab-hover-color:                               @global-link-hover-color;
-@tab-active-border:                             @global-primary-background;
+
 @tab-active-background:                         transparent;
-@tab-active-color:                              @global-link-color;
+@tab-active-color:                              @global-primary-background;
 @tab-disabled-color:                            @global-muted-color;
+
+//
+// New
+//
+
+@tab-hover-border:                              transparent;
+@tab-active-border:                             @tab-active-color;
 
 
 // Component
@@ -31,8 +37,6 @@
 .hook-tab() {
     position: relative;
     border-width: 0 !important;
-    text-transform: uppercase;
-    letter-spacing: 1px;
     -webkit-transition: color 0.05s linear;
     transition: color 0.05s linear;
 
