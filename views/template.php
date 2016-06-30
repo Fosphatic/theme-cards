@@ -59,7 +59,6 @@
                 <div id="tm-main" class="tm-main uk-grid" data-uk-grid-match data-uk-grid-margin>
 
                     <main class="<?= $view->position()->exists('sidebar') ? 'uk-width-medium-2-3' : 'uk-width-1-1'; ?>">
-                        <?= $view->render('messages') ?>
                         <?= $view->render('content') ?>
                     </main>
 
